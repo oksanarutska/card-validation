@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <link rel="icon" type="image/png" href="https://groshivsim.com/img/favicon.png" sizes="32x32" />
+    <title>Card</title>
+    <link href="./styles/index.f00291bc5459d841a387.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header">
+      <img class="logo" src="./images/CREDITON.svg" alt="logo" />
+      <div class="lang">
+        <p class="p"><span>РУ </span>| <span>УКР</span></p>
+      </div>
+    </header>
+    <main class="main-content">
+      <h1 class="h1">Добавление платежной карты</h1>
+      <div class="card-wrapper">
+        <div class="card">
+          <h2 class="h2">Номер карты</h2>
+          <div class="form">
+            <input maxlength="19" id="card-number" class="form-field p" placeholder="Номер карты" />
+            <img class="card-type" src="" alt="" />
+            <p class="error-message">*Обязательное поле</p>
+          </div>
+          <div class="form-wrapper">
+            <div class="form">
+              <input id="card-date" class="form-field p" placeholder="Срок действия" />
+              <p class="error-message">*Обязательное поле</p>
+            </div>
+            <div class="form">
+              <input id="card-cvv" maxlength="3" class="form-field p" type="password" placeholder="CVV код" />
+              <p class="error-message">*Обязательное поле</p>
+            </div>
+          </div>
+          <p class="p content">
+            Для привязки карты мы проведем платеж в размере 1.00 UAH, который будет возвращен в течение 30 минут
+          </p>
+          <button class="button-submit p">Получить деньги</button>
+        </div>
+      </div>
+      <div class="loader-wrapper"><div class="loader"></div></div>
+    </main>
+    <script src="./js/index.f00291bc5459d841a387.js"></script>
+  </body>
+</html>
