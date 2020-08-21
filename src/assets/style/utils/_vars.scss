@@ -1,0 +1,42 @@
+// fonts
+$font-coreSans: 'coreSans';
+
+// colors
+$black: #000000;
+$white: #ffffff;
+$blue: #587BC3;
+$red: #FF8D8D;
+$gray: #808080;
+
+$layout-width: 1440;
+
+@function vw($px) {
+  $vw-context: ($layout-width*.01) * 1px;
+  @return ($px/$vw-context) * 1vw;
+}
+
+//percent minus vw
+@function percent-m-vw($percent, $px) {
+  $vw-context: ($layout-width*.01) * 1px;
+  @return unquote(('calc('+ $percent + ' - '+ ($px/$vw-context) * 1vw +')'));
+}
+
+// < adaptive
+// $breakpoints: (xs: 375, sm: 414, md: 768, lg: 1024);
+$breakpoints: (xs: 360, sm: 600, md: 900, lg: 1200);
+
+@mixin max($size) {
+  @if map-has-key($breakpoints, $size) {
+    @media (max-width: #{map-get($breakpoints, $size)}px) {
+      @content;
+    }
+  }
+
+  @else {
+    @media (max-width: #{$size}px) {
+      @content;
+    }
+  }
+}
+
+;

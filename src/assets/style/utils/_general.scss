@@ -1,0 +1,161 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  @include max(sm) {
+    overflow-y: auto;
+    height: 100%;
+  }
+}
+
+@mixin title {
+  font-family: $font-coreSans;
+  line-height: vw(34px);
+  font-weight: 400;
+  color: $black;
+
+  @include max(lg) {
+    line-height: 34px;
+  }
+
+  @include max(md) {
+    line-height: 24px;
+  }
+}
+
+@mixin text {
+  font-family: $font-coreSans;
+  line-height: vw(19px);
+  font-weight: 400;
+  color: $black;
+
+  @include max(lg) {
+    line-height: 19px;
+  }
+}
+
+.h1 {
+  @include title;
+  font-size: vw(32px);
+
+  @include max(lg) {
+    font-size: 32px;
+  }
+  @include max(sm) {
+    font-size: 25px;
+    font-weight: 300;
+  }
+}
+
+.h2 {
+  @include text;
+  font-size: vw(18px);
+
+  @include max(lg) {
+    font-size: 18px;
+  }
+
+}
+
+.p {
+  @include text;
+  font-size: vw(16px);
+
+  @include max(lg) {
+    font-size: 16px;
+  }
+
+ 
+}
+
+.error-message {
+  font-size: vw(12px);
+  font-family: $font-coreSans;
+  line-height: 20px;
+  color: $red;
+
+  @include max(lg) {
+    font-size: 12px;
+  }
+
+}
+
+.header {
+  width: 100%;
+  height: vw(100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(90deg, #5A4BE6 0.26%, #73AFF7 47.1%, #93D0D9 99.8%);
+
+  @include max(lg) {
+    height: 100px;
+  }
+
+  @include max(md) {
+    height: 80px;
+  }
+
+  @include max(sm) {
+    height: 64px;
+    padding: 0 24px;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: vw(160px);
+    height: vw(25px);
+
+    @include max(lg) {
+      width: 160px;
+      height: 25px;
+    }
+
+    @include max(md) {
+      width: 120px;
+      height: 25px;
+    }
+  }
+
+  .lang {
+    position: absolute;
+    right: vw(220px);
+
+    @include max(lg) {
+      right: 160px;
+    }
+
+    @include max(md) {
+      right: 100px;
+    }
+
+    @include max(sm) {
+      position: static;
+    }
+
+    .p {
+      color: $white;
+
+      span {
+        transition: color 0.3s ease-in-out;
+        cursor: pointer;
+
+        &:first-child {
+          color: $blue;
+        }
+
+        &:hover {
+          color: rgba($blue, 0.5);
+        }
+
+      }
+    }
+  }
+}

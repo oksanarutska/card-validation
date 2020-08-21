@@ -1,0 +1,237 @@
+@import '../../assets/style/index.scss';
+
+.main-content {
+    height: percent-m-vw(100%, 100px);
+    padding: 0 vw(240px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include max(lg) {
+        padding: 0 240px;
+        height: calc(100% - 100px);
+    }
+
+    @include max(md) {
+        padding: 0 20px;
+        height: calc(100% - 80px);
+    }
+
+    @include max(sm) {
+        padding: 32px 24px 50px 24px;
+        height: calc(100% - 64px);
+    }
+
+
+    .h1 {
+        margin-bottom: vw(28px);
+
+        @include max(lg) {
+            margin-bottom: 28px;
+        }
+
+        @include max(sm) {
+            margin-bottom: 33px;
+            max-width: 210px;
+            text-align: center;
+        }
+    }
+
+    .card-wrapper {
+        padding: vw(48px) vw(278px);
+        border: 1px solid #E4E4E4;
+        border-radius: 4px;
+
+        @include max(lg) {
+            padding: 48px 160px;
+        }
+
+        @include max(md) {
+            padding: 48px 100px;
+        }
+
+        @include max(sm) {
+            padding: 16px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            width: vw(404px);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @include max(lg) {
+                width: 404px;
+            }
+
+            @include max(md) {
+                width: 360px;
+            }
+
+            @include max(sm) {
+                width: 100%;
+            }
+
+            .h2 {
+                font-weight: 600;
+                margin-bottom: vw(17px);
+                display: inline-block;
+
+                @include max(lg) {
+                    margin-bottom: 17px;
+                }
+
+                @include max(sm) {
+                    display: none;
+                }
+            }
+
+            .form {
+                width: 100%;
+                position: relative;
+                .card-type{
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 30px;
+                    height: 30px;
+                }
+
+                &.error {
+                    .form-field {
+                        border: 1px solid $red;
+                    }
+                    .error-message{
+                        display: inline-block;
+                    }
+
+
+
+                }
+
+                .form-field {
+                    width: 100%;
+                    padding: vw(20px) vw(16px);
+                    border: 1px solid #CCCCCC;
+                    border-radius: 4px;
+
+                    @include max(lg) {
+                        padding: 20px 16px;
+                    }
+
+                    &:focus {
+                        outline: none;
+                        border: 1px solid $blue;
+                    }
+
+
+                }
+
+                .error-message {
+                    position: absolute;
+                    bottom: vw(-18px);
+                    right: 0;
+                    display: none;
+
+                    @include max(lg) {
+                        bottom: -18px;
+                    }
+
+                    @include max(sm) {
+                        bottom: -20px;
+                    }
+
+
+                }
+            }
+
+            .form-wrapper {
+                width: 100%;
+                margin: vw(30px) 0;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+
+                @include max(lg) {
+                    margin: 30px 0;
+                }
+
+                @include max(xs) {
+                    flex-direction: column;
+                }
+
+                .form {
+                    width: 50%;
+
+                    @include max(xs) {
+                        width: 100%;
+                    }
+
+                    &:not(:last-child) {
+                        margin-right: vw(16px);
+
+                        @include max(lg) {
+                            margin-right: 16px;
+                        }
+
+                        @include max(xs) {
+                            margin-right: 0;
+                            margin-bottom: 30px;
+                        }
+                    }
+                }
+            }
+
+            .content {
+                color: $gray;
+                margin-bottom: vw(20px);
+
+                @include max(lg) {
+                    margin-bottom: 20px;
+                }
+
+                @include max(sm) {
+                    margin-bottom: 32px;
+                }
+
+                @include max(xs) {
+                    font-size: 12px;
+                }
+
+            }
+
+            .button-submit {
+                width: 100%;
+                padding: vw(20px) 0;
+                background: linear-gradient(122.5deg, #5A4BE6 -33.07%, #73AFF7 48.35%, #93D0D9 139.94%);
+                color: $white;
+                border-radius: 4px;
+                border: none;
+                cursor: pointer;
+                transform: scale(1);
+                transition: all 0.3s ease-in-out;
+                outline: none;
+
+                @include max(lg) {
+                    padding: 20px 0;
+                }
+
+                @include max(sm) {
+                    background: linear-gradient(122.5deg, #5A4BE6 -33.07%, #73AFF7 48.35%, #93D0D9 139.94%);
+                }
+
+                &:hover {
+                    transform: scale(1.03)
+                }
+            }
+        }
+
+    }
+}
