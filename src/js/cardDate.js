@@ -1,5 +1,4 @@
 import Inputmask from "inputmask";
-import moment from "moment";
 
 export function cardDate() {
     let cardDate = document.querySelector("#card-date");
@@ -10,8 +9,8 @@ export function cardDate() {
         inputFormat: 'mm/yy',
         showMaskOnHover: false,
         showMaskOnFocus: false,
-        min: moment().add(1, 'M').format('MM/YY'),
-        max: moment().add(20, 'Y').format('MM/YY')
+        min: "09/20",
+        max: "08/40"
     }).mask(cardDate);
  
 }
